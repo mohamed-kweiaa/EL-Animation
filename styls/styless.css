@@ -1,0 +1,210 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    width: 100dvw;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+}
+
+.page{
+    height: 280px;
+    width: 300px;
+    background-color: grey;
+    display: grid;
+    grid-template-columns: 12% repeat(2 , 1fr) 12% repeat(2 , 1fr);
+    grid-template-rows: 12% repeat(2 , 1fr) 12% repeat(2 , 1fr) 12% ;
+    column-gap: 8%;
+    justify-content: center;
+    align-content: center;
+}
+
+.page div{
+    background-color:#323234;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+                            /* grid areas */
+
+.e-top{
+    grid-area: 1 / 1 / 2 / 4;
+    position: relative;
+}
+
+.e-mid{
+    grid-area: 4 / 1 / 5 / 4;
+}
+
+.e-bottom{
+    grid-area: 7 / 1 / 8 / 4;
+}
+
+.e-left{
+    grid-area: 1 / 1 / 8 / 2;
+}
+
+.l-left{
+    grid-area: 1 / 4 / 8 / 5;
+    position: relative;
+}
+
+.l-bottom{
+    grid-area: 7 / 4 / 8 / 7;
+    position: relative;
+}
+
+                        /* box styling */
+
+        /* L movement & animation*/
+
+.l-bottom::after{
+    content: "";
+    width: 28px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: orange;
+    position: absolute;
+    left: 105px;
+    top: 3px;
+    animation-name: l-bot-movement;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+
+
+
+@keyframes l-bot-movement {
+
+    0%{
+        left: 105px;
+        top: 3px;
+        opacity: 100%;
+    }
+
+    20%{
+        left: 4.5px;
+        top: 3px;
+        opacity: 100%;
+    }
+
+    40%{
+        left: 4.5px;
+        top: -242px;
+        opacity: 100%;
+    }
+
+    50%{
+        left: 4.5px;
+        top: -242px;
+        opacity: 0%;
+    }
+
+    100%{
+        
+        left: 4.5px;
+        top: -242px;
+        opacity: 0%;
+        
+    }
+}
+
+        /* E movement & animation*/
+
+
+.e-top::after{
+    content: "";
+    width: 28px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: orange;
+    position: absolute;
+    left: 108px;
+    top: 3px;
+    animation-name: e-top-movement;
+    animation-duration: 6s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    z-index: 2;
+}
+
+
+@keyframes e-top-movement {
+    5%{
+        left: 4px;
+        top: 3px;
+        
+    }
+
+    10%{
+        left: 4px;
+        top: 126px;
+    
+    }
+
+
+    15%{
+        left: 108px;
+        top: 126px;
+    
+    }
+
+    20%{
+        left: 4px;
+        top: 126px;
+    
+    }
+
+    25%{
+        left: 4px;
+        top: 249px;
+    
+    }
+
+
+    30%{
+        left: 108px;
+        top: 249px;
+    
+    }
+
+    35%{
+        left: 4px;
+        top: 249px;
+    
+    }
+
+
+    40%{
+        left: 4px;
+        top: 3px;
+    
+    }
+
+
+    50%{
+        left: 108px;
+        top: 3px;
+    
+    }
+
+    100%{
+        left: 108px;
+        top: 3px;
+    }
+
+}
